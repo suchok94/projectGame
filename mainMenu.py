@@ -1,4 +1,5 @@
 import GUI
+import game
 
 def welcome():
     GUI.welcome()
@@ -18,7 +19,6 @@ def main_menu():
                 GUI.incorrect_data()
         if data == 'new game':
             print('new game')
-        elif data == 'continue':
-            print('ncontinue')
+            path, world = game.create_new_game()
         elif data == 'load game':
             print('load game')
