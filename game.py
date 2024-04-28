@@ -66,13 +66,15 @@ def name_world()-> str:
     # предоставить выбор
     # вернуть название выбранной папки
 
+
 def choice_world():
     life = True
     while life == True:
         name_world = GUI.choice_world()
-        if os.path.isdir(f'World\{name_world}'):
+        if os.path.isdir(name_world):
             life = False
-
+        else:
+            GUI.incorrect_data()
     return name_world
 
 def game(character, world):
@@ -82,7 +84,7 @@ def game(character, world):
     :param world:
     :return:
     """
-
+    print(character, world)
     # цикл ходов и боёв
 
     pass
