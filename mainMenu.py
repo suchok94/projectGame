@@ -20,5 +20,6 @@ def main_menu():
         if data == 'new game':
             print('new game')
             path, world = game.create_new_game()
+            game.game(path, world)
         elif data == 'load game':
             print('load game')

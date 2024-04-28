@@ -25,6 +25,16 @@ def incorrect_data():
 def exit():
     print('GoodBye!')
 
+
+def info():
+    print('!!info!!')
+
+def choice_race():
+    print("Выберите расу: Человек, Эльф, Гном: ")
+
+    return input("")
+
+
 # def input_player():
 
 
