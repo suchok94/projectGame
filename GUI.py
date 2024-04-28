@@ -1,3 +1,4 @@
+import os
 def welcome():
     print(f'Добро пожаловать в игру "Название игры"')
 
@@ -42,8 +43,26 @@ def choice_name():
     print('введите имя своего персонажа')
     return input()
 
+def list_world():
+    path = r'Worlds'
+    info()
+    if os.path.isdir(path) == True:
+        os.chdir(path)
+        print('список миров')
+        print(os.listdir())
+    else:
+        print('нет созданных миров')
+
+def choice_world():
+    print("напиишите название мира для выбора")
+    return input()
+
+
+
+
 
 # def input_player():
+
 
 
 
