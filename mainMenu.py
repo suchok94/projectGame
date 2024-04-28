@@ -23,3 +23,5 @@ def main_menu():
             game.game(path, world)
         elif data == 'load game':
             print('load game')
+
+

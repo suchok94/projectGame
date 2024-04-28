@@ -8,13 +8,9 @@ def create_new_game():
 
 def create_character():
     # записать в файл данные
-    race = GUI.choice_race()
-    if race.lower() == 'человек':
-        pass
-    elif race.lower() == 'эльф':
-        pass
-    elif race.lower() == 'гном':
-        pass
+    race = choice_race()
+    class_character = choice_class_character()
+
     # path_to_file =
     # return path_to_file
     pass
@@ -32,8 +28,20 @@ def choice_race():
         else:
             GUI.incorrect_data()
     return race
-choice_race()
 
+def choice_class_character():
+    life = True
+    while life == True:
+        class_character = GUI.choice_class_character()
+        if class_character.lower() == 'воин':
+            life = False
+        elif class_character.lower() == 'маг':
+            life = False
+        elif class_character.lower() == 'лучник':
+            life = False
+        else:
+            GUI.incorrect_data()
+    return class_character
 def choice_world()-> str:
     """
     выбор мира из предложенных папок
