@@ -19,8 +19,8 @@ def main_menu():
                 GUI.incorrect_data()
         if data == 'new game':
             print('new game')
-            path, world = game.create_new_game()
-            game.game(path, world)
+            character, world = game.create_new_game()
+            game.game(character, world)
         elif data == 'load game':
             print('load game')
 

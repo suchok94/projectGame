@@ -2,23 +2,28 @@ import GUI
 def create_new_game():
     GUI.info()
 
-    path = create_character()
+    character = create_character()
     world = choice_world()
-    return path, world
+    return character, world
 
 def create_character():
-    # записать в файл данные
+    """
+    создаёт словарь-character
+    :return:
+    """
     name = choice_name()
     race = choice_race()
     class_character = choice_class_character()
-
-    # path_to_file =
-    # return path_to_file
-    pass
+    character = {'name': name,
+                 'race': race,
+                  'class': class_character}
+    return character
 
 def choice_name():
+    # сделать проверку на числа?
     name_character = GUI.choice_name()
     return name_character
+
 def choice_race():
     life = True
     while life == True:
@@ -46,6 +51,7 @@ def choice_class_character():
         else:
             GUI.incorrect_data()
     return class_character
+
 def choice_world()-> str:
     """
     выбор мира из предложенных папок
@@ -56,13 +62,14 @@ def choice_world()-> str:
     # вернуть название выбранной папки
     pass
 
-def game(path, world):
+def game(character, world):
     """
     принимает перса и мир для игры
     :param path:
     :param world:
     :return:
     """
+
     # цикл ходов и боёв
 
     pass
