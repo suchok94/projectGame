@@ -8,6 +8,7 @@ def create_new_game():
 
 def create_character():
     # записать в файл данные
+    name = choice_name()
     race = choice_race()
     class_character = choice_class_character()
 
@@ -15,6 +16,9 @@ def create_character():
     # return path_to_file
     pass
 
+def choice_name():
+    name_character = GUI.choice_name()
+    return name_character
 def choice_race():
     life = True
     while life == True:

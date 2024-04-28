@@ -38,6 +38,11 @@ def choice_class_character():
     print("Выберите класс: Воин, Маг, Лучник")
     return input()
 
+def choice_name():
+    print('введите имя своего персонажа')
+    return input()
+
+
 # def input_player():
 
 
