@@ -58,7 +58,12 @@ def choice_world():
     return input()
 
 
-
+def welcome_new_game(name, world):
+    '''
+    выводит информацию о мире в который попал игрок
+    :return:
+    '''
+    print(f'Hello, {name}, ti popal v {world}')
 
 
 # def input_player():

@@ -1,9 +1,8 @@
 import os.path
-
 import GUI
+
 def create_new_game():
     GUI.info()
-
     character = create_character()
     world = name_world()
     return character, world
@@ -16,9 +15,15 @@ def create_character():
     name = choice_name()
     race = choice_race()
     class_character = choice_class_character()
+    hp = 100
+    armor = 1000
+    attack_character = 10
     character = {'name': name,
                  'race': race,
-                  'class': class_character}
+                 'class': class_character,
+                 'attack': attack_character,
+                 'hp': hp,
+                 'armor': armor}
     return character
 
 def choice_name():
@@ -28,6 +33,7 @@ def choice_name():
 
 def choice_race():
     life = True
+    race = ''
     while life == True:
         race = GUI.choice_race()
         if race.lower() == 'человек':
@@ -42,6 +48,7 @@ def choice_race():
 
 def choice_class_character():
     life = True
+    class_character = ''
     while life == True:
         class_character = GUI.choice_class_character()
         if class_character.lower() == 'воин':
@@ -69,6 +76,7 @@ def name_world()-> str:
 
 def choice_world():
     life = True
+    name_world = ''
     while life == True:
         name_world = GUI.choice_world()
         if os.path.isdir(name_world):
@@ -77,14 +85,39 @@ def choice_world():
             GUI.incorrect_data()
     return name_world
 
-def game(character, world):
+def game(character, world, room = ''):
     """
     принимает перса и мир для игры
-    :param path:
+    :param character:
     :param world:
     :return:
     """
-    print(character, world)
     # цикл ходов и боёв
+    load_world(world, room)
+    GUI.welcome_new_game(character['name'], world)
+    step_by_world()
+    event()
 
+def load_world(world, room):
+    """
+    подгружает мир для игры
+    :param world:
+    :param room:
+    :return:
+    """
+    pass
+    # return room
+
+def step_by_world():
+    '''
+    передаёт шаг игрока
+    :return:
+    '''
+    pass
+
+def event():
+    '''
+    запускает событие в комнате
+    :return:
+    '''
     pass
