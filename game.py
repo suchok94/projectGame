@@ -85,7 +85,7 @@ def choice_world():
             GUI.incorrect_data()
     return name_world
 
-def game(character, world, room = ''):
+def game(character, world, room = 'start.txt'):
     """
     главное ядро самой игры
     :param character:
@@ -93,10 +93,17 @@ def game(character, world, room = ''):
     :return:
     """
     # цикл ходов и боёв
+    GUI.welcome_new_game(character['name'], world, room)
+    step = GUI.input_step(room)
+    check_step(step)
     load_world(world, room)
-    GUI.welcome_new_game(character['name'], world)
+
     step_by_world()
     event()
+
+# def check_step(step):
+#     if step.lower() == 'вперёд' or step.lower() == 'вперед':
+
 
 def load_world(world, room):
     """
@@ -105,8 +112,12 @@ def load_world(world, room):
     :param room:
     :return:
     """
-    pass
-    # return room
+    path = os.path.join(world, room)
+    file = open(path, 'r')
+    data = file.read()
+    file.close()
+
+    return data
 
 def step_by_world():
     '''

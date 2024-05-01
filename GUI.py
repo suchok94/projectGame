@@ -58,13 +58,20 @@ def choice_world():
     return input()
 
 
-def welcome_new_game(name, world):
+def welcome_new_game(name, world, room):
     '''
     выводит информацию о мире в который попал игрок
     :return:
     '''
-    print(f'Hello, {name}, ti popal v {world}')
+    if room == 'start.txt':
+        print(f'Hello, {name}, ti popal v {world} и находишься в начале пути')
+    else:
+        print(f'Hello, {name}, ti вернулся v {world} и находишься в комнате № {room}')
 
+def input_step(room):
+    if room == 'start.txt':
+        print('Вы в начале пути так что можете идти прямо. Для этого ввдетие "ВПЕРЁД"')
+    return input()
 
 # def input_player():
 
