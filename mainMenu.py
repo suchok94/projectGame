@@ -21,6 +21,7 @@ def main_menu():
             print('new game')
             character, world = game.create_new_game()
             game.game(character, world)
+            return
         elif data == 'load game':
             print('load game')
 

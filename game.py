@@ -87,7 +87,7 @@ def choice_world():
 
 def game(character, world, room = ''):
     """
-    принимает перса и мир для игры
+    главное ядро самой игры
     :param character:
     :param world:
     :return:
